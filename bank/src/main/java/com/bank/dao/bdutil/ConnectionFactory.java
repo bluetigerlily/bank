@@ -1,0 +1,61 @@
+package com.bank.dao.bdutil;
+
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.Wrapper;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import org.postgresql.Driver;
+import java.util.*;
+import java.sql.CallableStatement;
+import java.sql.ResultSet;
+
+
+
+public class ConnectionFactory
+{
+	private static final Logger LOGGER = Logger.getLogger(ConnectionFactory.class.getName());
+	public static final String URL = "jdbc:postgresql://localhost:5432/postgres";
+	public static final String USER = "postgres";
+	public static final String PASS = "4271";
+
+public void main1 (String[]args)
+{
+	ConnectionFactory obj_ConnectionFactory=new ConnectionFactory();
+}
+
+	public static Connection get_connection()
+	{
+			
+		
+	try 
+	
+		{
+		
+		
+		DriverManager.registerDriver(new Driver());
+		
+		return DriverManager.getConnection(URL,USER,PASS);
+		
+		
+		}	
+		
+	catch (SQLException ex) 
+		{
+			throw new RuntimeException("Error in connecting  to PostgresSQL server ",ex);
+			
+		}
+	}
+	//testing the connection
+	public static void main(String[]args)
+	{
+		System.out.println("Connected to SQL Server");
+	}
+
+
+	}
