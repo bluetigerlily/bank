@@ -32,65 +32,35 @@ import java.sql.SQLClientInfoException;
 public class User
 {
 	
-
-	public User(int iD, String name, String pass, double accountbalance, String pendingdeposit,
-			String pendingwithdrawl) {
-	}
-
-	public void main(String[]args)
-	{	
-	
-	Statement statement =null;
-	
-	try
-	{
-	ConnectionFactory obj_ConnectionFactory=new ConnectionFactory();
-	System.out.println(obj_ConnectionFactory.get_connection());
-	
-	Connection connection=obj_ConnectionFactory.get_connection();}
-	catch (Exception e)
-	{
-		e.printStackTrace();
-	}
-	}	
-	
-	private static Integer ID;
+	public static  int ID;
 	private static String name;
 	private static String pass;
-	static double accountbalance;
+	private static double accountbalance;
 	private static String pendingwithdrawl;
-	private static String pendingdeposit;
-	 
+	private static  String pendingdeposit;
+	
+	
 	
 	//getters and setters for table values
 	
-	public User (String name, String pass, double accountbalance, String pendingwithdrawl, String pendingdeposit)
+	
+	public User()
 	{
-		this.name=name;
-		this.pass=pass;
-		this.accountbalance=accountbalance;
-		this.pendingwithdrawl=pendingwithdrawl;
+		
+	}
+	
+	public User(int ID, String name, String pass, double accountbalance, String pendingdeposit, String pendingwithdrawl)
+	{
+		super();
+		this.ID = ID;
+		this.name= name;
+		this.accountbalance= accountbalance;
 		this.pendingdeposit=pendingdeposit;
-	}
-	public User (Integer ID, String name, String pass, double accountbalance, String pendingwithdrawl, String pendingdeposit)
-	{
-		this.name =name;
-		this.pass= pass;
-		this.accountbalance=accountbalance;
 		this.pendingwithdrawl=pendingwithdrawl;
-		this.pendingdeposit = pendingdeposit;
-		this.ID=ID;
 	}
-	public User (String name, String pass, String pendingwithdrawl, String pendingdeposit, Integer ID, Integer accountbalance)
-	{
-		this.name=name;
-		this.pendingwithdrawl=pendingwithdrawl;
-		this.pass = pass;
-		this.pendingdeposit=pendingdeposit;
-		this.ID=ID;
-	}
+		
 
-	public String getPendingwithdrawl() 
+	public static String getPendingwithdrawl() 
 	{
 		return pendingwithdrawl;
 	}
@@ -107,21 +77,18 @@ public class User
 		
 		this.pendingdeposit = pendingdeposit;
 	}
-	public static double getAccountbalance() 
-	{
-		return accountbalance;
-	}
+	
 	public void setAccountbalance(double accountbalance) 
 	{
 		this.accountbalance = accountbalance;
 	}
-	public static Integer getID() 
+	public static int getID() 
 	{
 		return ID;
 	}
-	public void setID(int ID) 
+	public void setID( int ID) 
 	{
-		this.ID = ID;
+		this.ID=ID;
 	}
 	public static String getName()
 	{
@@ -131,7 +98,7 @@ public class User
 	{
 		this.name=name;
 	}
-	public String getPass()
+	public static String getPass()
 	{
 		return pass;
 	}
@@ -139,7 +106,23 @@ public class User
 	{
 		this.pass=pass;
 	}
+
+	public static double getAccountbalance() 
+	{
+		
+		return accountbalance;
+	}
+
+	public int getUserbyID(int ID) 
+	{
+		
+		return ID;
+	}
+
 	
+
+
+
 	
 	}
 
